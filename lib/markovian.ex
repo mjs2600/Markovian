@@ -18,7 +18,7 @@ defmodule Markovian do
   def new(states, actions, initial_state) do
     state_space = for state <- states, into: %{} do
       action_space = for action <- actions, into: %{} do
-        {action, 2 * :rand.uniform - 1}
+        {action, 2 * :rand.uniform() - 1}
       end
 
       {state, action_space}
@@ -47,7 +47,7 @@ defmodule Markovian do
   end
 
   defp generate_action(mdp) do
-    random? = mdp.random_action_rate > :rand.uniform
+    random? = mdp.random_action_rate > :rand.uniform()
     action = do_generate_action(mdp.q_table[mdp.current_state], random?)
     %{mdp | current_action: action}
   end
