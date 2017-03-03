@@ -1,5 +1,5 @@
 # Markovian
-[![Build Status](https://travis-ci.org/mjs2600/Markovian.svg?branch=master)](https://travis-ci.org/mjs2600/Markovian)
+[![Build Status](https://travis-ci.org/mjs2600/Markovian.svg?branch=master)](https://travis-ci.org/mjs2600/Markovian) [![Coverage Status](https://coveralls.io/repos/github/mjs2600/Markovian/badge.svg?branch=master)](https://coveralls.io/github/mjs2600/Markovian?branch=master)
 A Q-learner for the BEAM.
 ## Installation
 
