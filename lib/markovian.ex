@@ -49,7 +49,7 @@ defmodule Markovian do
   defp generate_action(mdp) do
     random? = mdp.random_action_rate > :rand.uniform
     action = do_generate_action(mdp.q_table[mdp.current_state], random?)
-    Map.put(mdp, :current_action, action)
+    %{mdp | current_action: action}
   end
 
   defp do_generate_action(current_state_actions, random?)
