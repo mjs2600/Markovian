@@ -3,3 +3,5 @@ elixir:
   - 1.4.2
 otp_release:
   - 19.2
+
+script: mix coveralls.travis
