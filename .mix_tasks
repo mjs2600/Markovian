@@ -7,6 +7,9 @@ archive.uninstall
 clean
 cmd
 compile
+credo
+credo.gen.check
+credo.gen.config
 deps
 deps.clean
 deps.compile
@@ -14,7 +17,9 @@ deps.get
 deps.tree
 deps.unlock
 deps.update
+dialyzer
 do
+docs
 escript
 escript.build
 escript.install
@@ -36,9 +41,15 @@ hex.user
 loadconfig
 local
 local.hex
+local.nerves
+local.phoenix
+local.phx
 local.public_keys
 local.rebar
+nerves.new
 new
+phoenix.new
+phx.new
 profile.fprof
 run
 test
