@@ -11,7 +11,7 @@ by adding `markovian` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:markovian, "~> 0.1.1"}]
+  [{:markovian, "~> 0.1.2"}]
 end
 ```
 
