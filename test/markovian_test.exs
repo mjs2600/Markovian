@@ -17,6 +17,7 @@ defmodule MarkovianTest do
       |> Map.values()
       |> List.first()
       |> Map.keys()
+
     assert @actions == actions
   end
 
@@ -29,6 +30,7 @@ defmodule MarkovianTest do
       |> List.first()
       |> Map.values()
       |> List.first()
+
     assert 0 != reward
   end
 
@@ -41,16 +43,18 @@ defmodule MarkovianTest do
   end
 
   test "updating the MDP updates the state" do
-    new_mdp = @states
-    |> Markovian.new(@actions, :s1)
-    |> Markovian.update(1, :s2)
+    new_mdp =
+      @states
+      |> Markovian.new(@actions, :s1)
+      |> Markovian.update(1, :s2)
 
     assert :s2 == new_mdp.current_state
   end
 
   test "updating the MDP updates the action" do
-    initial_mdp = @states
-    |> Markovian.new(@actions, :s1)
+    initial_mdp =
+      @states
+      |> Markovian.new(@actions, :s1)
 
     action =
       put_in(initial_mdp.q_table[:s1][:a2], 100)
@@ -63,8 +67,9 @@ defmodule MarkovianTest do
   end
 
   test "updating the MDP decays the random_action_rate" do
-    initial_mdp = @states
-    |> Markovian.new(@actions, :s1)
+    initial_mdp =
+      @states
+      |> Markovian.new(@actions, :s1)
 
     final_mdp = initial_mdp |> Markovian.update(1, :s2)
     assert initial_mdp.random_action_rate > final_mdp.random_action_rate
