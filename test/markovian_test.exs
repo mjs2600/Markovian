@@ -57,7 +57,8 @@ defmodule MarkovianTest do
       |> Markovian.new(@actions, :s1)
 
     action =
-      put_in(initial_mdp.q_table[:s1][:a2], 100)
+      initial_mdp.q_table[:s1][:a2]
+      |> put_in(100)
       |> Map.put(:current_action, :a1)
       |> Map.put(:random_action_rate, 0)
       |> Markovian.update(1, :s1)
